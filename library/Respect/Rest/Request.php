@@ -221,7 +221,7 @@ class Request
      *
      * @return mixed A route forwarding or a silent null
      */
-    protected function catchError($e)
+    protected function catchErrors($e)
     {
         foreach ($this->route->sideRoutes as $sideRoute) {
             $errorClass = get_class($e);
