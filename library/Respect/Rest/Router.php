@@ -516,6 +516,9 @@ class Router
     public function routeDispatch()
     {
         $this->applyVirtualHost();
+        
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept, Origin, Authorization");
 
         $matchedByPath  = $this->getMatchedRoutesByPath();
         $allowedMethods = $this->getAllowedMethods(
